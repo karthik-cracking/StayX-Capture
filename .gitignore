@@ -15,6 +15,10 @@
 
 ## Build & Publish Output
 [Aa]pp[Pp]ackages/
+publish/
+publish_selfcontained/
+*.zip
+*.exe
 _UpgradeReport_Files/
 Backup*/
 TestResults/
