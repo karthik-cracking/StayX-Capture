@@ -5,6 +5,7 @@
   # StayX Capture
   ### Next-Generation Screen Capture, Precision Annotation & Cloud Sync Suite for Windows
 
+  [![Latest Release](https://img.shields.io/badge/Release-v4.0.0-FF3D00?style=for-the-badge&logo=github&logoColor=white)](https://github.com/karthik-cracking/StayX-Capture/releases/tag/v4.0.0)
   [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011%20(x64)-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/karthik-cracking/StayX-Capture)
   [![Framework](https://img.shields.io/badge/.NET-8.0%20WPF-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
   [![Idle CPU](https://img.shields.io/badge/Idle%20CPU-0.00%25-00C853?style=for-the-badge&logo=speedtest&logoColor=white)](https://github.com/karthik-cracking/StayX-Capture)
@@ -162,9 +163,16 @@ Real measurements taken on an active Windows 11 system (64-bit .NET 8 runtime) w
 
 ## 🚀 Quick Start & Installation
 
-### Requirements
+### 📥 Download Pre-Compiled Executables
+Download the latest binaries directly from the [**v4.0.0 Release Page**](https://github.com/karthik-cracking/StayX-Capture/releases/tag/v4.0.0):
+
+* **[StayXCapture.exe](https://github.com/karthik-cracking/StayX-Capture/releases/download/v4.0.0/StayXCapture.exe)** *(~8.0 MB)*: Lightweight single portable executable (requires .NET 8 desktop runtime).
+* **[StayXCapture-Standalone-win-x64.exe](https://github.com/karthik-cracking/StayX-Capture/releases/download/v4.0.0/StayXCapture-Standalone-win-x64.exe)** *(~73.9 MB)*: Fully self-contained portable executable (zero dependencies, runs instantly on any Windows 10/11 machine).
+* **[StayXCapture-v4.0.0-win-x64.zip](https://github.com/karthik-cracking/StayX-Capture/releases/download/v4.0.0/StayXCapture-v4.0.0-win-x64.zip)** *(~6.7 MB)*: Portable zip archive.
+
+### Requirements (for source/lightweight build)
 - **Windows 10 (Build 19041+) or Windows 11 (64-bit)**
-- **[.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)** (installed automatically on modern Windows 11 updates)
+- **[.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)** (only required if running the 8MB lightweight build)
 
 ### Running from Source
 
