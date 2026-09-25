@@ -1,69 +1,70 @@
 # Contributing to StayX Capture
 
-First off, thank you for considering contributing to StayX Capture! It is people like you who make open-source tools better for everyone.
+First off, thank you for considering contributing to **StayX Capture**! It is passionate developers like you who make open-source productivity utilities better for the entire Windows community.
 
-Please read through these guidelines to understand how you can participate in the development of this project.
+Please read through these guidelines before submitting bug reports, feature requests, or pull requests.
 
 ---
 
 ## 🗺️ How Can I Contribute?
 
 ### 🐛 Reporting Bugs
-Before creating a bug report, please check the [Issues list](https://github.com/yourusername/StayXCapture/issues) to ensure the bug hasn't already been reported.
+Before filing an issue, check the [open issues](https://github.com/karthik-cracking/StayX-Capture/issues) to ensure it hasn't already been reported.
+When reporting a bug, use the **Bug Report** template and include:
+- A clear, descriptive summary.
+- Reproduction steps.
+- Your Windows version, DPI scaling, and multi-monitor setup.
+- Relevant terminal or console output.
 
-If you find a new bug, please open an issue and include:
-* A clear, descriptive title.
-* Step-by-step instructions to reproduce the issue.
-* Expected vs. actual behavior.
-* Details about your environment (Windows version, Python version, monitor setup/scaling).
-* Any relevant error logs or screenshots.
-
-### 💡 Suggesting Enhancements
-We welcome feature suggestions! To request a new feature:
-* Search the existing issues to see if the feature has already been proposed.
-* Explain the problem your suggestion solves and how it benefits users.
-* Describe the desired behavior in detail.
+### 💡 Requesting Features
+Have an idea for a tool, export format, or integration? Open a [Feature Request](https://github.com/karthik-cracking/StayX-Capture/issues/new?template=feature_request.md) describing:
+- The problem your idea solves.
+- How the UI or workflow should look and feel.
+- Any mockups or references.
 
 ### 🛠️ Submitting Pull Requests
-1. Fork the repository and create your branch from `main`.
-2. Install development requirements (see **Development Setup** below).
-3. If you've added code that should be tested, add tests or describe how you verified it.
-4. Ensure your code compiles and conforms to formatting guidelines.
-5. Open a Pull Request with a clear description of your changes and reference any related issues.
+1. **Fork** the repository and clone your fork locally.
+2. Create a feature branch: `git checkout -b feature/your-feature-name`.
+3. Build and test your changes locally using Visual Studio 2022 or the .NET 8 CLI.
+4. Keep commits clean, semantic, and focused.
+5. Push to your fork and submit a **Pull Request** against `main`.
 
 ---
 
-## 💻 Development Setup
+## 💻 Local Development Setup
 
-To set up a local development environment:
+### Prerequisites
+- **Windows 10 (Build 19041+) or Windows 11**
+- **[.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)** or higher
+- **IDE**: [Visual Studio 2022](https://visualstudio.microsoft.com/) (with *.NET desktop development* workload), [JetBrains Rider](https://www.jetbrains.com/rider/), or VS Code (with C# Dev Kit).
 
-1. **Fork and Clone the Repository:**
-   ```bash
-    git clone https://github.com/yourusername/StayXCapture.git
-    cd "StayX Capture"
-   ```
+### Clone & Build
 
-2. **Set Up a Virtual Environment:**
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate
-   ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/karthik-cracking/StayX-Capture.git
+cd StayX-Capture
 
-3. **Install Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+# 2. Restore NuGet dependencies
+dotnet restore StayXCapture.sln
 
-4. **Run the Application:**
-   ```bash
-   python Capture.py
-   ```
+# 3. Build the solution
+dotnet build StayXCapture.sln -c Debug
+
+# 4. Run the WPF application
+dotnet run --project StayXCapture.Wpf/StayXCapture.Wpf.csproj
+```
 
 ---
 
-## 🎨 Coding Standards
+## 🏗️ Architecture & Coding Standards
 
-* **PEP 8**: Follow standard Python style guidelines (PEP 8) for code formatting.
-* **Keep imports clean**: Import library modules in alphabetical groups (standard library, third-party, local).
-* **Write clear comments**: Document complex logic, especially custom painting logic in `Capture.py`.
-* **Testing**: Manually test screenshot capture and tray menu behavior after making modifications.
+* **Event-Driven & Low Overhead**: Never introduce `Thread.Sleep`, polling timers, or background spin loops. Utilize native Windows message hooks (`RegisterHotKey`, `AddClipboardFormatListener`).
+* **Safe Unmanaged Resource Management**: Every Win32 bitmap handle (`HBITMAP`) or GDI context must be wrapped in `using` statements and freed with `DeleteObject(hBitmap)` inside `finally` blocks to guarantee zero GDI memory leaks.
+* **Aggressive Memory Hygiene**: Windows that hold full-resolution captures (`EditorWindow`, `RegionSelectionWindow`, `UploadPromptWindow`) must clear visual element sources and call `MemoryHelper.MinimizeMemory()` when closing or hiding to keep idle RAM usage < 10 MB.
+* **Modern Windows Aesthetic**: Maintain consistent dark mode styling, DWM immersive titlebar styling, and smooth border geometries. Avoid generic Windows chrome defaults.
+
+---
+
+## ⚖️ License
+By contributing to StayX Capture, you agree that your contributions will be licensed under the [MIT License](LICENSE).

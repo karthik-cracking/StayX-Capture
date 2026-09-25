@@ -1,50 +1,48 @@
-# Virtual Environments
-venv/
-.venv/
-env/
-ENV/
-venv_new/
-new_venv/
-*venv*/
-*_venv/
+## .NET Core / C# / Visual Studio
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
+*.pidb
+*.booproj
+*.svclog
 
-# Python caching & compilation
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-*.manifest
-*.spec
+## Build & Publish Output
+[Aa]pp[Pp]ackages/
+_UpgradeReport_Files/
+Backup*/
+TestResults/
+*.sublime-project
+*.sublime-workspace
 
-# PyInstaller / Build Artifacts
-build/
-dist/
+## Visual Studio Code & JetBrains Rider
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.DotSettings.user
 
-# OS-specific files
+## OS Generated Files
 .DS_Store
 .DS_Store?
 ._*
 Thumbs.db
-desktop.ini
+ehthumbs.db
+[Dd]esktop.ini
 
-# IDEs and Editors
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.project
-.pydevproject
-.settings/
-
-# Local Configurations & Secrets
-.screenshot_capture_config.json
-.screenshot_capture_clipboard.json
+## App Local Config & Secrets
+stayx_config.json
+stayx_history.json
 *credentials.json
 *token.json
 *.log
-
-# User-specific files
 .env
-.env.local
-.env.*.local
+.env.*

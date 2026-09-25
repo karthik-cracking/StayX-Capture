@@ -1,0 +1,31 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Light Theme -->
+    
+    <Color x:Key="ShadowColor">#A0AEC0</Color>
+    <Color x:Key="ToggleThumbShadowColor">#A0AEC0</Color>
+    
+    <SolidColorBrush x:Key="AppBackgroundBrush" Color="#F3F3F5"/>
+    <SolidColorBrush x:Key="CardBackgroundBrush" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="#E2E8F0"/>
+    
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="#1A202C"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#718096"/>
+    <SolidColorBrush x:Key="TextDisabledBrush" Color="#CBD5E0"/>
+    
+    <SolidColorBrush x:Key="AccentBrush" Color="#38B2AC"/>
+    <SolidColorBrush x:Key="ButtonHoverBrush" Color="#EDF2F7"/>
+    
+    <!-- Toggle Switch Colors -->
+    <SolidColorBrush x:Key="ToggleTrackOffBrush" Color="#E2E8F0"/>
+    <SolidColorBrush x:Key="ToggleTrackOnBrush" Color="#38B2AC"/>
+    <SolidColorBrush x:Key="ToggleTrackBorderOffBrush" Color="#CBD5E0"/>
+    <SolidColorBrush x:Key="ToggleTrackBorderOnBrush" Color="#319795"/>
+    <SolidColorBrush x:Key="ToggleThumbBrush" Color="#FFFFFF"/>
+    
+    <SolidColorBrush x:Key="ToggleIconOffBrush" Color="#718096"/>
+    <SolidColorBrush x:Key="ToggleIconOnBrush" Color="#38B2AC"/>
+
+    <!-- Shared status colors -->
+    <SolidColorBrush x:Key="SuccessBrush" Color="#38B2AC"/>
+</ResourceDictionary>

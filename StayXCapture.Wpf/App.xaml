@@ -1,0 +1,19 @@
+<Application x:Class="StayXCapture.Wpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:tb="http://www.hardcodet.net/taskbar"
+             xmlns:local="clr-namespace:StayXCapture.Wpf"
+             Startup="Application_Startup"
+             Exit="Application_Exit">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/DarkTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <tb:TaskbarIcon x:Key="AppTaskbarIcon"
+                            IconSource="pack://application:,,,/StayXCapture.Wpf;component/Assets/app_icon.ico"
+                            ToolTipText="StayX Capture" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

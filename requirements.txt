@@ -1,6 +1,0 @@
-PyQt5==5.15.9
-google-auth==2.41.1
-google-auth-oauthlib==1.2.3
-google-api-python-client==2.179.0
-pynput>=1.7.0
-requests>=2.31.0
